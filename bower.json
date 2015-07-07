@@ -1,0 +1,16 @@
+{
+  "name": "pokerbot",
+  "version": "0.0.0",
+  "homepage": "https://github.com/buwuwei/heads-up-poker-bot",
+  "authors": [
+    "Brian Arpie <brian.arpie@gmail.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
