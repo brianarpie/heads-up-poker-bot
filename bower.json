@@ -12,5 +12,11 @@
     "bower_components",
     "test",
     "tests"
-  ]
+  ],
+  "dependencies": {
+    "underscore": "~1.8.3",
+    "angular": "~1.4.2",
+    "skeleton-css": "~2.0.4",
+    "pixi": "~3.0.7"
+  }
 }
