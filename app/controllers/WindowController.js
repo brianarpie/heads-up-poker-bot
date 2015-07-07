@@ -12,7 +12,7 @@
 
     var stage = new PIXI.Container();
 
-    var cardTexture = PIXI.Texture.fromImage("../../pokercard.png");
+    var cardTexture = PIXI.Texture.fromImage("/app/images/pokercard.png");
     var card = new PIXI.Sprite(cardTexture);
 
     card.position.x = 400;
