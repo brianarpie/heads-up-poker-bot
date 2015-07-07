@@ -2,14 +2,15 @@
 
   "use strict";
 
-  var app = angular.modules("HeadsupPokerBotApp");
+  var app = angular.module("HeadsupPokerBotApp");
 
   app.controller("WindowController", ["$scope", function($scope) {
+
     var renderer = new PIXI.WebGLRenderer(800, 600);
 
     document.body.appendChild(renderer.view);
 
-    var stage = new PIXI.container();
+    var stage = new PIXI.Container();
 
     var cardTexture = PIXI.Texture.fromImage("../../pokercard.png");
     var card = new PIXI.Sprite(cardTexture);

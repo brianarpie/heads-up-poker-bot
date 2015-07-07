@@ -2,6 +2,6 @@
 
   "use strict";
 
-  angular.module("HeadsupPokerBotApp", []);
+  angular.module("HeadsupPokerBotApp", ["ngRoute"]);
   
 })();
