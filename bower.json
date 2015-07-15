@@ -19,6 +19,10 @@
     "skeleton-css": "~2.0.4",
     "pixi": "~3.0.7",
     "angular-route": "~1.4.2",
-    "jquery": "~2.1.4"
+    "jquery": "~2.1.4",
+    "angular-mocks": "~1.4.3"
+  },
+  "resolutions": {
+    "angular": "1.4.3"
   }
 }

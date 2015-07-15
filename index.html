@@ -4,17 +4,25 @@
   <title>Brian Arpie's Headsup Poker Bot</title>
   <meta description="headsup poker bot">
   <link rel="stylesheet" href="bower_components/skeleton-css/css/skeleton.css">
+  <link rel="stylesheet" href="app/stylesheets/window.css">
   <script src="bower_components/jquery/dist/jquery.js"></script>
   <script src="bower_components/angular/angular.min.js"></script>
-  <script src="bower_components/angular-route/angular-route.js"></script>
+  <script src="bower_components/angular-route/angular-route.min.js"></script>
+  <script src="bower_components/underscore/underscore-min.js"></script>
   <script src="bower_components/pixi/bin/pixi.min.js"></script>
   <script src="app/app.js"></script>
 </head>
 <body ng-app="HeadsupPokerBotApp">
   
   <div ng-controller="WindowController">
+    <div ng-controller="TableController">
+    </div>
   </div>
   
   <script src="app/controllers/WindowController.js"></script>
+  <script src="app/controllers/TableController.js"></script>
+  <script src="app/controllers/GameController.js"></script>
+  <script src="app/directives/PlayerControlsDirective.js"></script>
+  <script src="app/services/HandRankingService.js"></script>
 </body>
 </html>
