@@ -14,7 +14,11 @@
         }
       };
 
-      var rankOrder = ["A", "2", "3", "4", "5", "6", "7", "8", "9", "T", "J", "Q", "K", "A"];
+      var rankOrder = [
+        "A", "2", "3", "4", "5", 
+        "6", "7", "8", "9", "T", 
+        "J", "Q", "K", "A"
+      ];
 
       function checkStraight(cards) {
         var ranks = [];
@@ -69,27 +73,6 @@
 
       }
 
-      // function check4OfAKind(cards) {
-      //   var ranks = _.map(cards, function(card) {
-      //     return card.charAt(0);
-      //   });
-      //   var fourOfAKindRank = undefined;
-      //   var rankCounter = {};
-      //   _.each(ranks, function(rank) {
-      //     if(!rankCounter[rank])
-      //       rankCounter[rank] = 0;
-
-      //     rankCounter[rank]++; 
-      //   });
-      //   _.each(rankCounter, function(count, rank) {
-      //     if (count === 4) {
-      //       fourOfAKindRank = rank;
-      //     }
-      //   });
-
-      //   return fourOfAKindRank;
-      // }
-
       function checkFlush(cards) {
         var suitCounter = {
           s: 0,
@@ -105,6 +88,55 @@
         return _.find(suitCounter, function(suit) {
           return suit >= 5;
         });
+      }
+
+      function getRanks(cards) {
+        return _.map(cards, function(card) {
+          return card.charAt(0);
+        });
+      }
+
+      function sortByRank(cards) {
+        return _.sortBy(cards, function(card) {
+          return rankOrder.indexOf(card.charAt(0));
+        });
+      }
+
+      function checkFullHouse(cards) {
+        var threeOfAkinds = [];
+        var pairs = [];
+
+        // console.log('hmm',checkXNumOfSameCard(cards, 2));
+        cards = sortByRank(cards);
+
+        var ranksOfCards = getRanks(cards).reverse();
+        var cardCount = _.countBy(ranksOfCards, function(c) {
+          return c;
+        });
+        console.log('cc', cardCount)
+        // var cardCount = _.reduce(ranksOfCards, function(memo, cardRank) {
+        //   if(!memo[cardRank]) memo[cardRank] = 0;
+
+        //   memo[cardRank]++;
+
+        //   return memo;
+        // }, {});
+
+        // _.
+
+        _.each(cardCount, function(rankCount, rank) {
+          
+          if (rankCount >= 3) threeOfAkinds.push(rank);
+          if (rankCount >= 2) pairs.push(rank);
+
+        });
+        console.log(threeOfAkinds, pairs)
+        // if (threeOfAkinds.length && pairs.length) {
+          // return [threeOfAkinds[0], pairs[0]]
+        // }
+
+
+
       }
  
       // returns 
@@ -124,6 +156,7 @@
         console.log(checkXNumOfSameCard(fourOfAKind, 4));
         console.log(checkXNumOfSameCard(twoPair, 2));
         console.log(checkXNumOfSameCard(twoBoats, 3));
+        console.log('fullhouse', checkFullHouse(twoBoats));
       };
     }
   ]);
